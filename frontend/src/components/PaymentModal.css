@@ -1,0 +1,354 @@
+.payment-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.payment-modal-container {
+    background: white;
+    width: 90%;
+    max-width: 480px;
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.payment-modal-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.payment-modal-header h2 {
+    margin: 0 0 8px 0;
+    font-size: 24px;
+    color: #1a1a1a;
+}
+
+.payment-modal-header p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.payment-info-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    border: 1px solid #eee;
+}
+
+.column-preview {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.column-preview img {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.column-details h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.column-details p {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+    color: #888;
+}
+
+.price-tag {
+    text-align: right;
+}
+
+.price-tag .currency {
+    font-size: 14px;
+    color: #ff4d4f;
+    font-weight: bold;
+}
+
+.price-tag .amount {
+    font-size: 24px;
+    color: #ff4d4f;
+    font-weight: bold;
+}
+
+.section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.method-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.method-item {
+    border: 2px solid #eee;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.method-item:hover {
+    border-color: #d9d9d9;
+    background: #fafafa;
+}
+
+.method-item.active {
+    border-color: #1a1a1a;
+    background: #f0f0f0;
+}
+
+.method-item.active[data-method="wechat"] {
+    border-color: #07c160;
+    background: #e6f9ed;
+}
+
+.method-item.active[data-method="alipay"] {
+    border-color: #1677ff;
+    background: #e6f0ff;
+}
+
+.method-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.wechat-icon {
+    background: #07c160;
+}
+
+.alipay-icon {
+    background: #1677ff;
+}
+
+.pay-submit-btn {
+    width: 100%;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.pay-submit-btn:hover {
+    background: #333;
+}
+
+.pay-submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.payment-qrcode-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    animation: fadeIn 0.3s ease;
+}
+
+/* 品牌色彩引导 */
+.payment-qrcode-section.wechat .qrcode-wrapper {
+    border: 4px solid #07c160;
+}
+
+.payment-qrcode-section.wechat .section-title {
+    color: #07c160;
+}
+
+.payment-qrcode-section.alipay .qrcode-wrapper {
+    border: 4px solid #1677ff;
+}
+
+.payment-qrcode-section.alipay .section-title {
+    color: #1677ff;
+}
+
+.qrcode-wrapper {
+    padding: 16px;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.qrcode-loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #1890ff;
+    border-radius: 12px;
+}
+
+.payment-status-tip {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.payment-status-tip p {
+    font-size: 14px;
+    color: #8c8c8c;
+    margin: 4px 0;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.confirm-btn {
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #1a1a1a;
+    transition: background 0.2s;
+}
+
+.confirm-btn.wechat {
+    background: #07c160;
+}
+
+.confirm-btn.alipay {
+    background: #1677ff;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.payment-success-anim {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.success-icon {
+    width: 64px;
+    height: 64px;
+    background: #52c41a;
+    color: white;
+    font-size: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.payment-footer {
+    border-top: 1px solid #eee;
+    margin-top: 32px;
+    padding-top: 16px;
+    text-align: center;
+}
+
+.payment-footer p {
+    font-size: 12px;
+    color: #999;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}

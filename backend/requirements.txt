@@ -1,0 +1,83 @@
+# FastAPI 核心依赖
+fastapi>=0.115.0
+uvicorn[standard]>=0.34.0
+pydantic>=2.12.0
+pydantic-settings>=2.7.0
+
+# 数据库
+sqlalchemy>=2.0.36
+alembic>=1.14.0
+aiosqlite>=0.20.0
+greenlet>=3.0.0  # SQLAlchemy 异步所需
+
+# 爬虫和解析
+requests>=2.32.0
+beautifulsoup4>=4.12.3
+html2text>=2024.2.26
+httpx>=0.24.0
+playwright>=1.40.0
+openai>=1.0.0
+lark-oapi>=1.2.9
+rich>=13.7.0
+
+# 工具库
+python-multipart>=0.0.20
+aiofiles>=24.1.0
+
+# 认证和安全
+python-jose[cryptography]>=3.3.0
+bcrypt>=4.2.0
+
+
+# 开发和测试
+pytest>=8.3.0
+pytest-asyncio>=0.25.0
+
+# 可选依赖
+asyncpg==0.31.0
+Pillow>=10.1.0
+python-alipay-sdk==3.4.0 
+wechatpy==1.8.18
+jose==1.0.0
+python-pptx>=1.0.2
+tqdm>=4.66.0
+pdfplumber>=0.11.4
+
+# 阿里云短信
+alibabacloud_dysmsapi20170525>=4.4.0
+alibabacloud_tea_openapi>=0.4.3
+alibabacloud_tea_util>=0.3.14
+
+
+jinja2>=3.1.0
+PyMuPDF>=1.22.0
+img2pdf>=0.4.4
+reportlab>=3.6.12
+python-magic>=0.4.27
+magic-pdf>=0.6.0
+
+# PPT 转换增强
+langchain>=0.3.0
+langchain-openai>=0.2.0
+langchain-community>=0.3.0
+numpy>=2.0.0
+trafilatura>=1.6.0
+lxml>=5.1.0
+aiohttp>=3.9.0
+websockets>=12.0
+python-dotenv>=1.0.0
+# AI 视频助手 (BiliNote) 依赖
+yt-dlp
+faster-whisper
+ffmpeg-python
+av
+ctranslate2
+modelscope
+gmssl
+PyExecJS
+Markdown
+markdown_pdf
+weasyprint
+modelscope
+PyMuPDF==1.26.7
+blinker

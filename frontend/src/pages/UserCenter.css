@@ -1,0 +1,430 @@
+.back-home-link {
+    position: fixed;
+    top: 85px;
+    left: 2rem;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.back-home-link:hover {
+    color: var(--color-primary);
+    transform: translateX(-3px);
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.uc-page {
+    display: flex;
+    min-height: 100vh;
+    background: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+/* Sidebar */
+.uc-sidebar {
+    width: 280px;
+    background: var(--glass-background);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid var(--glass-border);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    z-index: 100;
+}
+
+.uc-user-brief {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-xl);
+}
+
+.uc-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.uc-user-meta h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.uc-role-badge {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.uc-role-badge.admin {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.uc-role-badge.member {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.uc-role-badge.visitor {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+.uc-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.uc-nav button {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: transparent;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.uc-nav button:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--color-primary);
+}
+
+.uc-nav button.active {
+    background: var(--color-primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.uc-sidebar-footer {
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.uc-logout-btn {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #fee2e2;
+    background: transparent;
+    color: #ef4444;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.uc-logout-btn:hover {
+    background: #ef4444;
+    color: white;
+}
+
+/* Content Area */
+.uc-content {
+    flex: 1;
+    padding: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.uc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.uc-stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+}
+
+.uc-stat-card span {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.uc-stat-card strong {
+    font-size: 1.5rem;
+    color: var(--color-text-primary);
+}
+
+.uc-info-block {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-2xl);
+    border: 1px solid var(--color-border);
+}
+
+.token-display {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.token-item label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.token-item code {
+    background: #f8fafc;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-family: monospace;
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    display: block;
+    word-break: break-all;
+}
+
+/* Membership */
+.membership-banner {
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+}
+
+.membership-status {
+    padding: 2.5rem;
+    border-radius: var(--radius-2xl);
+}
+
+.membership-status.active {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: white;
+}
+
+.membership-status.inactive {
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    text-align: center;
+}
+
+.premium-label {
+    background: #fbbf24;
+    color: #78350f;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.renewal-notice {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(251, 191, 36, 0.1);
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    font-size: 0.875rem;
+}
+
+/* Wallet */
+.wallet-overview {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+}
+
+.balance-display,
+.points-display {
+    padding: 2rem;
+    border-radius: var(--radius-2xl);
+    color: white;
+}
+
+.balance-display {
+    background: var(--gradient-primary);
+}
+
+.points-display {
+    background: #6366f1;
+}
+
+.milestone-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.milestone-card {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: var(--radius-xl);
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.milestone-card.active {
+    border-color: var(--color-primary);
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.milestone-card button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+
+.milestone-card button:disabled {
+    background: #cbd5e1;
+}
+
+/* Forms */
+.uc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-row input,
+.form-row select {
+    flex: 1;
+}
+
+.uc-form input,
+.uc-form select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-lg);
+}
+
+.form-group-uc {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group-uc label {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Invitation */
+.invitation-hero {
+    display: flex;
+    gap: 2rem;
+    background: #e0f2fe;
+    padding: 2.5rem;
+    border-radius: var(--radius-2xl);
+    align-items: center;
+}
+
+.code-badge {
+    background: white;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    border-radius: var(--radius-xl);
+    margin: 1rem 0;
+    color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+}
+
+/* Table */
+.uc-table-container {
+    overflow-x: auto;
+}
+
+.uc-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.uc-table th,
+.uc-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.uc-table th {
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.text-success {
+    color: #10b981;
+}
+
+.text-danger {
+    color: #ef4444;
+}
+
+@media (max-width: 768px) {
+    .uc-page {
+        flex-direction: column;
+    }
+
+    .uc-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .uc-nav {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+}

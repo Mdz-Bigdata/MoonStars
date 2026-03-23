@@ -1,0 +1,14 @@
+# 注册监听器
+from app.services.video_assistant.utils.logger import get_logger
+from app.services.video_assistant.events.handlers import cleanup_temp_files
+from app.services.video_assistant.events.signals import transcription_finished
+
+logger = get_logger(__name__)
+
+def  register_handler():
+    try:
+        transcription_finished.connect(cleanup_temp_files)
+        logger.info("注册监听器成功")
+    except Exception as e:
+        logger.error(f"注册监听器失败:{e}")
+
