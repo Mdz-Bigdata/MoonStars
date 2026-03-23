@@ -82,11 +82,6 @@ python3.14 -m uvicorn app.main:app --reload --port 8000
 
 API 文档地址：`http://localhost:8000/docs`
 
-**默认管理员账户**：
-- 用户名/邮箱：`admin`
-- 密码：`admin123`
-- 权限：管理员
-
 > 💡 **提示**：首次启动时，如果数据库中没有 admin 账户，可以运行 `python create_admin.py` 创建默认管理员账户。
 
 ### 2. 前端启动
