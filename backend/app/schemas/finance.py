@@ -30,6 +30,7 @@ class WithdrawalCreate(BaseModel):
     method: str = Field(..., description="alipay, wechat, bank")
     account_info: str
     account_name: str
+    bank_name: Optional[str] = None
 
 class WithdrawalResponse(BaseModel):
     id: UUID
@@ -37,6 +38,7 @@ class WithdrawalResponse(BaseModel):
     method: str
     account_info: str
     account_name: str
+    bank_name: Optional[str] = None
     status: WithdrawalStatus
     created_at: datetime
     processed_at: Optional[datetime] = None

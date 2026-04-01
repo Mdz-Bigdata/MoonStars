@@ -18,7 +18,7 @@ echo "Installing backend dependencies..."
 if [ ! -f ".env" ]; then
     echo "Creating .env from .env.example..."
     cp .env.example .env
-fi./
+fi
 
 echo "Starting backend server on port 8000..."
 ./venv/bin/uvicorn app.main:app --reload --port 8000 &

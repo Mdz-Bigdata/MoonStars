@@ -21,7 +21,8 @@ const UserCenter: React.FC = () => {
         amount: '',
         method: 'alipay',
         account_info: '',
-        account_name: ''
+        account_name: '',
+        bank_name: ''
     })
 
     const [bindForm, setBindForm] = useState({
@@ -98,7 +99,7 @@ const UserCenter: React.FC = () => {
         try {
             await submitWithdrawal({ ...withdrawForm, amount: amountFen })
             alert('申请已提交，请等待管理员审核')
-            setWithdrawForm({ amount: '', method: 'alipay', account_info: '', account_name: '' })
+            setWithdrawForm({ amount: '', method: 'alipay', account_info: '', account_name: '', bank_name: '' })
             fetchFinanceData()
         } catch (error: any) {
             alert(error.response?.data?.detail || '提现申请失败')
@@ -273,10 +274,22 @@ const UserCenter: React.FC = () => {
                                     <select value={withdrawForm.method} onChange={e => setWithdrawForm({ ...withdrawForm, method: e.target.value })}>
                                         <option value="alipay">支付宝</option>
                                         <option value="wechat">微信</option>
+                                        <option value="bank">银行卡</option>
                                     </select>
                                 </div>
-                                <input type="text" placeholder="收款账号" value={withdrawForm.account_info} onChange={e => setWithdrawForm({ ...withdrawForm, account_info: e.target.value })} />
-                                <input type="text" placeholder="收款人真实姓名" value={withdrawForm.account_name} onChange={e => setWithdrawForm({ ...withdrawForm, account_name: e.target.value })} />
+                                {withdrawForm.method === 'bank' && (
+                                    <>
+                                        <input type="text" placeholder="银行卡号" value={withdrawForm.account_info} onChange={e => setWithdrawForm({ ...withdrawForm, account_info: e.target.value })} />
+                                        <input type="text" placeholder="开户银行" value={withdrawForm.bank_name || ''} onChange={e => setWithdrawForm({ ...withdrawForm, bank_name: e.target.value })} />
+                                        <input type="text" placeholder="收款人真实姓名" value={withdrawForm.account_name} onChange={e => setWithdrawForm({ ...withdrawForm, account_name: e.target.value })} />
+                                    </>
+                                )}
+                                {(withdrawForm.method === 'alipay' || withdrawForm.method === 'wechat') && (
+                                    <>
+                                        <input type="text" placeholder="收款账号" value={withdrawForm.account_info} onChange={e => setWithdrawForm({ ...withdrawForm, account_info: e.target.value })} />
+                                        <input type="text" placeholder="收款人真实姓名" value={withdrawForm.account_name} onChange={e => setWithdrawForm({ ...withdrawForm, account_name: e.target.value })} />
+                                    </>
+                                )}
                                 <button type="submit" className="btn btn-primary w-full">申请提现</button>
                             </form>
                         </div>

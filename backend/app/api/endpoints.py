@@ -1912,7 +1912,8 @@ async def submit_withdrawal(
         amount=data.amount,
         method=data.method,
         account_info=data.account_info,
-        account_name=data.account_name
+        account_name=data.account_name,
+        bank_name=data.bank_name
     )
     
     # 3. 记录交易

@@ -310,7 +310,9 @@ async def get_current_user(
             return User(
                 id=_UUID("d3ce3180-3195-4249-89d1-7818a722b9f3"),
                 role="ADMIN",
-                username="admin_debug"
+                username="admin_debug",
+                balance=0,
+                points=0
             )
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,

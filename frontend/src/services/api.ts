@@ -393,6 +393,7 @@ export const submitWithdrawal = async (data: {
     method: string
     account_info: string
     account_name: string
+    bank_name?: string
 }): Promise<any> => {
     const response = await api.post('/finance/withdraw', data)
     return response.data

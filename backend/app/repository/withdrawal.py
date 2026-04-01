@@ -12,14 +12,16 @@ class WithdrawalRepository:
     def __init__(self, db: AsyncSession):
         self.db = db
 
-    async def create(self, user_id: UUID, amount: int, method: str, account_info: str, account_name: str) -> WithdrawalRequest:
+    async def create(self, user_id: UUID, amount: int, method: str, account_info: str, account_name: str, bank_name: Optional[str] = None) -> WithdrawalRequest:
         """创建提现申请"""
         request = WithdrawalRequest(
             user_id=user_id,
             amount=amount,
+            actual_amount=amount,
             method=method,
             account_info=account_info,
             account_name=account_name,
+            bank_name=bank_name,
             status=WithdrawalStatus.PENDING
         )
         self.db.add(request)

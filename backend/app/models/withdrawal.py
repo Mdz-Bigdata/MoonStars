@@ -38,7 +38,9 @@ class WithdrawalRequest(Base):
     
     # 账户信息
     method = Column(String(50), nullable=False, comment="提现方式 (alipay, wechat, bank)")
-    account_info = Column(JSONB, nullable=False, comment="提现账户详情 (名称、账号等)")
+    account_info = Column(String(500), nullable=False, comment="提现账号")
+    account_name = Column(String(200), nullable=False, comment="收款人姓名")
+    bank_name = Column(String(200), nullable=True, comment="开户银行（仅银行卡提现时使用）")
     
     # 状态与审核
     status = Column(String(20), default=WithdrawalStatus.PENDING.value, nullable=False, index=True, comment="提现状态")
